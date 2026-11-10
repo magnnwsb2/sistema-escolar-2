@@ -113,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
   atualizarTurmas();
   const aba = localStorage.getItem('sistema-escolar-2-aba') || 'cadastrar';
   Interface.mostrarAba(aba === 'listar' ? 'listar' : 'cadastrar');
+  document.documentElement.classList.remove('iniciar-listar');
   listarAluno();
   document.querySelectorAll('[data-aba]').forEach(botao =>
     botao.addEventListener('click', () => Interface.mostrarAba(botao.dataset.aba)));
