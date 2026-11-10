@@ -1,0 +1,5 @@
+#alunos table { width: 100%; border-collapse: collapse; min-width: 680px; font-size: 14px; }
+#alunos th, #alunos td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
+#alunos th { background: #edf2f7; }
+#alunos tr:hover td { background: #f7faff; }
+#alunos td button { white-space: nowrap; }
