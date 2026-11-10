@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Escolar 2</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./tabStyle.css">
+  <script type="module" src="./Main.js"></script>
+  <script>
+    try {
+      if (localStorage.getItem('sistema-escolar-2-aba') === 'listar') {
+        document.documentElement.classList.add('iniciar-listar');
+      }
+    } catch (erro) { console.warn('Preferência de aba indisponível.', erro); }
+  </script>
+</head>
+<body>
+  <main>
+    <h1>Sistema Escolar</h1>
+    <nav class="tabs-container" aria-label="Abas do sistema">
+      <button type="button" class="tab-button active" data-aba="cadastrar">Cadastrar</button>
+      <button type="button" class="tab-button" data-aba="listar">Listar Alunos</button>
+    </nav>
+    <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+    <section id="tab-cadastrar" class="tab-content active">
+      <h2>Cadastrar turma</h2>
+      <label for="professor">Professor</label><input id="professor" type="text">
+      <label for="curso">Curso</label><input id="curso" type="text">
+      <button type="button" id="salvar-turma">Salvar Turma</button>
+      <h2>Cadastrar aluno</h2>
+      <label for="turma-aluno">Turma</label><select id="turma-aluno"><option value="">Selecione uma turma</option></select>
+      <label for="nome">Nome</label><input id="nome" type="text">
+      <label for="matricula">Matrícula</label><input id="matricula" type="text">
+      <label for="n1">Nota 1</label><input id="n1" type="number" min="0" max="10" step="0.1">
+      <label for="n2">Nota 2</label><input id="n2" type="number" min="0" max="10" step="0.1">
+      <label for="n3">Nota 3</label><input id="n3" type="number" min="0" max="10" step="0.1">
+      <button type="button" id="salvar-aluno">Salvar Aluno</button>
+    </section>
+    <section id="tab-listar" class="tab-content">
+      <h2>Alunos cadastrados</h2>
+      <div id="editor-notas" hidden>
+        <h3 id="aluno-edicao">Editar notas</h3>
+        <label for="nota-edicao">Qual nota deseja alterar?</label>
+        <select id="nota-edicao"><option value="1">Nota 1</option><option value="2">Nota 2</option><option value="3">Nota 3</option></select>
+        <label for="valor-edicao">Novo valor</label>
+        <input id="valor-edicao" type="number" min="0" max="10" step="0.1">
+        <div class="acoes"><button type="button" id="salvar-nota">Salvar nota</button><button type="button" id="cancelar-edicao">Cancelar</button></div>
+      </div>
+      <div id="alunos" class="lista-alunos"></div>
+    </section>
+  </main>
+</body>
+</html>
