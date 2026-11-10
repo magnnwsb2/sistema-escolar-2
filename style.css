@@ -1,0 +1,23 @@
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f7fa; color: #202938; }
+main { max-width: 900px; margin: 0 auto; background: white; padding: 24px; border-radius: 12px; }
+h1 { margin-top: 0; } h2 { margin: 24px 0 12px; font-size: 20px; }
+.tabs-container { display: flex; gap: 8px; border-bottom: 1px solid #ddd; padding-bottom: 8px; }
+button { cursor: pointer; border: 1px solid #bbb; border-radius: 6px; padding: 10px 14px; background: #eef2f7; }
+button:hover { background: #dbeafe; }
+.tab-button.active { background: #1769d2; color: white; border-color: #1769d2; }
+.tab-content { display: none; flex-direction: column; gap: 8px; }
+.tab-content.active { display: flex; }
+input, select { width: 100%; max-width: 440px; padding: 10px; border: 1px solid #aaa; border-radius: 6px; font: inherit; }
+label { margin-top: 6px; }
+.mensagem { min-height: 20px; color: #17633a; }
+.mensagem.erro { color: #b42318; }
+#editor-notas { border: 1px solid #b9c8df; border-radius: 8px; padding: 16px; background: #f7faff; margin: 10px 0; }
+#editor-notas[hidden] { display: none; }
+.acoes { display: flex; gap: 8px; margin-top: 10px; }
+#alunos { max-width: 100%; overflow-x: auto; }
+html.iniciar-listar #tab-cadastrar { display: none; }
+html.iniciar-listar #tab-listar { display: flex; }
+html.iniciar-listar [data-aba="cadastrar"] { background: #eef2f7; color: #202938; border-color: #bbb; }
+html.iniciar-listar [data-aba="listar"] { background: #1769d2; color: white; border-color: #1769d2; }
+@media (max-width: 600px) { body { padding: 8px; } main { padding: 14px; } }
